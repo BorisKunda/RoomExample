@@ -43,7 +43,7 @@ public class ReadUserFragment extends Fragment {
                         recyclerView.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.VERTICAL));
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setAdapter(myAdapter);
-                        Log.d("d", "d");
+
                     }
                 });
             }
