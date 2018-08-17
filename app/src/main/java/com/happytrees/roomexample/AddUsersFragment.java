@@ -36,7 +36,7 @@ public class AddUsersFragment extends Fragment {
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (edtId.length() != 0 || edtName.length() != 0 || edtEmail.length() != 0) {
+                if (edtId.length() != 0 && edtName.length() != 0 && edtEmail.length() != 0) {
                     int userId = Integer.parseInt(edtId.getText().toString());
                     String username = edtName.getText().toString();
                     String userEmail = edtEmail.getText().toString();

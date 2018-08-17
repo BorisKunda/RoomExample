@@ -16,6 +16,7 @@ import java.util.List;
 
 public class ReadUserFragment extends Fragment {
 
+    static   MyAdapter myAdapter;
 
     public ReadUserFragment() {
         // Required empty public constructor
@@ -35,7 +36,7 @@ public class ReadUserFragment extends Fragment {
             @Override
             public void run() {
                 List<User> users = MyAppDatabase.getMyAppDatabase(getActivity()).myDao().getUsers();
-                final MyAdapter myAdapter = new MyAdapter(users,getActivity());
+                myAdapter = new MyAdapter(users,getActivity());
                 //post to UI (main thread) through post method .without post method there will be CalledFromWrongThreadException
                 recyclerView.post(new Runnable() {
                     @Override

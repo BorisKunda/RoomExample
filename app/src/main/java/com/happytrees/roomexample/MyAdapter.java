@@ -61,16 +61,19 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             idTV = itemView.findViewById(R.id.idUser);
 
 
-            //click
+            //click -update user
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                     Toast.makeText(context, "click", Toast.LENGTH_SHORT).show();
+                    //use interface and implement it in main activity
+                     FragmentChanger fragmentChanger = (FragmentChanger) context;
+                     fragmentChanger.changeFragments();
+                     //Toast.makeText(context, "click", Toast.LENGTH_SHORT).show();
                 }
             });
 
 
-            //long click
+            //long click - remove user
         itemView.setOnLongClickListener(new View.OnLongClickListener() {
 
                 @Override
@@ -82,7 +85,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                             v.post(new Runnable() {
                                 @Override
                                 public void run() {
-                                    Toast.makeText(context, "long click", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(context, "user removed", Toast.LENGTH_SHORT).show();
                                     int position = getAdapterPosition();
                                     users.remove(position);
                                     notifyItemRemoved(position);
